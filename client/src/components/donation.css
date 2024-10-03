@@ -1,0 +1,75 @@
+.donation-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Limit the width for a compact design */
+  margin: auto; /* Center the container */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px; /* Add some space below the title */
+}
+
+.category-container {
+  margin: 10px 0; /* Reduce margin for compactness */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px; /* Reduce padding for compactness */
+}
+
+.category-title {
+  color: #555;
+  margin-bottom: 10px; /* Add space below the title */
+}
+
+input {
+  padding: 8px; /* Reduce padding for compactness */
+  margin-top: 5px; /* Add space between label and input */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Full width for better usability */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Reduce button padding */
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Make button full width */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  color: #d9534f;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* New styles for the donor address input */
+.donor-address-container {
+  margin: 10px 0; /* Spacing for donor address container */
+  padding: 10px; /* Padding for visual separation */
+  border: 1px solid #ccc; /* Border for visibility */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.donor-address-title {
+  color: #555;
+  margin-bottom: 5px; /* Space below the donor address title */
+}
+
+.donor-address-input {
+  padding: 8px; /* Padding for donor address input */
+  border: 1px solid #ccc; /* Border for input */
+  border-radius: 4px; /* Rounded corners for input */
+  width: 100%; /* Full width for usability */
+}
