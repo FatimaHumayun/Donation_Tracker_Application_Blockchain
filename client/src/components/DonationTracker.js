@@ -13,7 +13,7 @@ const Donation = () => {
   const [donorAddress, setDonorAddress] = useState("");
   const [message, setMessage] = useState("");
 
-  const contractAddress = "0x7A65B226E22b9ce32bbfDd0cb3c5195fdCaBbDe0";
+  const contractAddress = "0xBc30f8cc5d6E86df0c9b31f431614B932ddE56b3"; // Your contract address
 
   useEffect(() => {
     const loadBlockchainData = async () => {
@@ -64,7 +64,7 @@ const Donation = () => {
         // Call the donate function
         await contract.methods.donate(category).send({
           from: donorAddress,
-          value: amountInWei,
+          value: amountInWei, // Send the Ether
         });
 
         setMessage(

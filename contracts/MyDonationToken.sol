@@ -1,9 +1,11 @@
-// SPDX-License-Identifier: MIT
+// // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract DonationTracker is Ownable {
+contract DonationTracker is ERC20, Ownable {
     // Struct to represent a donation
     struct Donation {
         address donor;
@@ -32,24 +34,15 @@ contract DonationTracker is Ownable {
         uint256 timestamp
     );
 
-    constructor() {}
+    constructor() ERC20("DonationToken", "DTK") {
+        _mint(msg.sender, 1000 * 10 ** decimals()); // Mint initial supply to the deployer
+    }
 
     // Function to donate to a specific category
     function donate(string memory category) public payable {
         require(msg.value > 0, "Donation must be greater than zero");
 
-        // Validate category
-        require(
-            keccak256(abi.encodePacked(category)) ==
-                keccak256(abi.encodePacked("healthcare")) ||
-                keccak256(abi.encodePacked(category)) ==
-                keccak256(abi.encodePacked("education")) ||
-                keccak256(abi.encodePacked(category)) ==
-                keccak256(abi.encodePacked("lifestyle")),
-            "Invalid category"
-        );
-
-        // Transfer ETH to the respective account based on the category
+        // Transfer Ether to the respective account based on the category
         if (
             keccak256(abi.encodePacked(category)) ==
             keccak256(abi.encodePacked("healthcare"))
@@ -65,6 +58,8 @@ contract DonationTracker is Ownable {
             keccak256(abi.encodePacked("lifestyle"))
         ) {
             lifestyleAccount.transfer(msg.value);
+        } else {
+            revert("Invalid category");
         }
 
         // Record the donation
