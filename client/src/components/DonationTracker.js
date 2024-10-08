@@ -146,11 +146,13 @@ const Donation = () => {
                         <span className="donation-donor">
                           Donor: {donation.donor}
                         </span>
+                        <br></br>
                         <span className="donation-amount">
                           Amount:{" "}
                           {Number(Web3.utils.fromWei(donation.amount, "ether"))}{" "}
                           ETH
                         </span>
+                        <br></br>
                         <span className="donation-time">
                           Time:{" "}
                           {new Date(
